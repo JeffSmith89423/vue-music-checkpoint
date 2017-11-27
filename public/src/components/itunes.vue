@@ -9,7 +9,7 @@
         
           <h4>{{song.trackName}}</h4>
           <h4>{{song.artistName}}</h4>
-          <h4>{{song.collectionName}}</h4>
+          <!-- <h4>{{song.collectionName}}</h4> -->
           
       </div>
     </div>
