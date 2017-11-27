@@ -6,9 +6,13 @@
         <button type="submit">Search Artists</button>
       </form>
       <div  v-for="song in songs">
-        
+        <div class="panel">
+            <img :src="song.artworkUrl100">
           <h4>{{song.trackName}}</h4>
           <h4>{{song.artistName}}</h4>
+          <!-- <h4>{{song.arworkUrl60}}</h4> -->
+        </div>
+
           <!-- <h4>{{song.collectionName}}</h4> -->
           
       </div>
