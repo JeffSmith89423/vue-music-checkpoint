@@ -10,6 +10,8 @@
             <img :src="song.artworkUrl100">
           <h4>{{song.trackName}}</h4>
           <h4>{{song.artistName}}</h4>
+          <audio class="audio" controls="controls" :src="song.previewUrl"></audio>
+          <button @click="addToMyTunes(song)" type="submit" class="btn btn-primary">Add to Playlist</button>
           <!-- <h4>{{song.arworkUrl60}}</h4> -->
         </div>
 
@@ -35,8 +37,8 @@
       getMusicByArtist() {
         this.$store.dispatch('getMusicByArtist', this.artist)
       },
-      addToMyTunes(i) {
-        this.$store.dispatch('addToMyTunes', i)
+      addToMyTunes(song) {
+        this.$store.dispatch('addToMyTunes', this.song)
       }
     },
     computed: {

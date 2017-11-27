@@ -43,4 +43,7 @@
     min-height: 500px;
     min-width: 45%;
   }
+  body {
+    background-color: darkgrey;
+  }
 </style>
