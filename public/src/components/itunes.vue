@@ -1,11 +1,17 @@
 <template>
-  <div class="Itunes">
-    <div>
-      <form @submit.prevent="getMusicByArtist()">
+  <div>
+    <div >
+      <form @submit.prevent="getMusicByArtist" style="text-align: center">
         <input type="text" placeholder="Artist Name" v-model="artist">
         <button type="submit">Search Artists</button>
-        
       </form>
+      <div  v-for="song in songs">
+        
+          <h4>{{song.trackName}}</h4>
+          <h4>{{song.artistName}}</h4>
+          <h4>{{song.collectionName}}</h4>
+          
+      </div>
     </div>
 
   </div>
@@ -13,9 +19,12 @@
 
 <script>
   export default {
-    name: 'Itunes',
+    name: 'itunes',
     data() {
       return {
+        artist: ""
+        
+        
       }
     },
     methods: {
@@ -27,7 +36,8 @@
       }
     },
     computed: {
-      results() {
+      songs() {
+        // debugger
         return this.$store.state.results
       }
     }
@@ -36,4 +46,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  
 </style>

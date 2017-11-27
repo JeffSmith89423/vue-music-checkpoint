@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- YOU WILL PROBABLY END UP WITH SOMETHING LIKE THIS -->
+          <!-- YOU WILL PROBABLY END UP WITH SOMETHING LIKE THIS -->
     <mytunes class="mytunes">
 
     </mytunes>
@@ -22,7 +22,8 @@
       }
     },
     components:{ 
-      itunes
+      itunes,
+      mytunes
     }
   }
 </script>
@@ -32,7 +33,7 @@
   .mytunes {
     display: inline-block;
     min-height: 500px;
-    min-width: 50%;
+    min-width: 45%;
     background: green;
   }
 

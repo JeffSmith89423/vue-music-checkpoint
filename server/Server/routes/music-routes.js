@@ -2,32 +2,32 @@ var Music = require('../models/music')
 var router = require('express').Router()
 
 
-router.get('/api/burgers', (req, res, next)=>{
-    Burgers.find({})
-        .then(burgers =>{
-            res.send(burgers)
+router.get('/api/songs', (req, res, next)=>{
+    Songs.find({})
+        .then(songs =>{
+            res.send(songs)
         })
         .catch(err =>{
             res.status(400).send({Error: err})
         })
 })
 
-router.get('/api/burgers/:id', (req, res, next)=>{
-    Burgers.findById(req.params.id)
-        .then(burger=>{
-            res.send(burger)
+router.get('/api/songs/:id', (req, res, next)=>{
+    Songss.findById(req.params.id)
+        .then(song=>{
+            res.send(song)
         })
         .catch(err =>{
             res.status(400).send({Error: err})
         })
 })
 
-router.post('/api/burgers', (req, res, next)=>{
-    Burgers.create(req.body)
-        .then(burger => {
+router.post('/api/songs', (req, res, next)=>{
+    Songs.create(req.body)
+        .then(song => {
             let response = {
-                data: burger,
-                message: 'Successfully created Burger!'
+                data: song,
+                message: 'Successfully got song'
             }
             res.send(response)
         })
@@ -37,9 +37,9 @@ router.post('/api/burgers', (req, res, next)=>{
 })
 
 
-router.put('/api/burgers/:id', (req, res, next)=>{
-    var action = 'Update Burger'
-    Burgers.findByIdAndUpdate(req.params.id, req.body)
+router.put('/api/songs/:id', (req, res, next)=>{
+    var action = 'Update song'
+    songs.findByIdAndUpdate(req.params.id, req.body)
         .then(data=>{
             res.send(handleResponse(action, data))
         })
@@ -49,10 +49,10 @@ router.put('/api/burgers/:id', (req, res, next)=>{
 })
 
 
-router.delete('/api/burgers/:id', (req, res, next)=>{
-    Burgers.findByIdAndRemove(req.params.id)
+router.delete('/api/songs/:id', (req, res, next)=>{
+    Songss.findByIdAndRemove(req.params.id)
         .then(()=>{
-            res.send({message: 'So much for that burger'})
+            res.send({message: 'So much for that song'})
         })
         .catch(err =>{
             res.status(400).send({Error: err})

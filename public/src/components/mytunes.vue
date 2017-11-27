@@ -1,12 +1,12 @@
 <template>
-    <div class="my-tunes">
+    <div class="mytunes">
              
     </div>
   </template>
   
   <script>
     export default {
-      name: 'my-tunes',
+      name: 'mytunes',
       data() {
         return {
         }
@@ -22,14 +22,14 @@
         }
       },
       computed: {
-        target() {
-          return this.$store.state //<-- add something here
-        }
+        mytunes() {
+          return this.$store.state.mytunes //<-- add something here
       }
     }
+  }
   </script>
   
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+ 
   <style scoped>
    
   </style>
