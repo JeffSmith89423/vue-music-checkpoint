@@ -5,8 +5,8 @@ var DBConnect = require('./config/mlab/mlab-config')
 // var sessions = require('./auth/sessions')
 var cors = require('cors')
 var port = 3000
-
-
+var playlistRoutes = require('./Server/routes/playlist-routes')
+var songRoutes = require('./Server/routes/song-routes')
 //Route Variables
 
 // var burgerRoutes = require('./server/routes/burger-routes')
@@ -23,7 +23,8 @@ server.use(express.static(__dirname + '/public'))
 
 
 //routes in routes folder
-
+server.use(playlistRoutes)
+server.use(songRoutes)
 //getYourMusic
 
 //addSongToList

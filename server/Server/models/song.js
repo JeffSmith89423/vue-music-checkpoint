@@ -12,7 +12,7 @@ var schema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Song', schema)
+module.exports = mongoose.model('song', schema)
 
 
 

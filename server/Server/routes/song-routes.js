@@ -1,4 +1,4 @@
-var Music = require('../models/music')
+var Music = require('../models/song')
 var router = require('express').Router()
 
 
@@ -13,7 +13,7 @@ router.get('/api/songs', (req, res, next)=>{
 })
 
 router.get('/api/songs/:id', (req, res, next)=>{
-    Songss.findById(req.params.id)
+    Songs.findById(req.params.id)
         .then(song=>{
             res.send(song)
         })
@@ -52,7 +52,7 @@ router.put('/api/songs/:id', (req, res, next)=>{
 router.delete('/api/songs/:id', (req, res, next)=>{
     Songss.findByIdAndRemove(req.params.id)
         .then(()=>{
-            res.send({message: 'So much for that song'})
+            res.send({message: 'piece out song'})
         })
         .catch(err =>{
             res.status(400).send({Error: err})

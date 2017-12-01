@@ -38,7 +38,7 @@
         this.$store.dispatch('getMusicByArtist', this.artist)
       },
       addToMyTunes(song) {
-        this.$store.dispatch('addToMyTunes', this.song)
+        this.$store.dispatch('addToMyTunes', song)
       }
     },
     computed: {

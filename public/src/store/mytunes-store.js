@@ -27,13 +27,28 @@ var store = new vuex.Store({
       })
     },
     getMyTunes({commit, dispatch}){
-      //this should send a get request to your server to return the list of saved tunes
+      debugger
+      $.get('http://localhost:3000/api/songs')
+      .then(data => {
+        commit('setMyTunes', data)
+      })//this should send a get request to your server to return the list of saved tunes
     },
     addToMyTunes({commit, dispatch}, track){
-      $.post//this will post to your server adding a new track to your tunes
+      debugger
+      console.log(track)
+      $.post('http://localhost:3000/api/songs', track)
+        .then(res => {
+          dispatch('getMyTunes')
+        })//this will post to your server adding a new track to your tunes
     },
     removeTrack({commit, dispatch}, track){
-      //Removes track from the database with delete
+      $.ajax({
+        url: 'http://localhost:3000/api/songs/' + id,
+        method: 'DELETE'
+      })
+        .then(res => {
+          dispatch('getMyTunes')
+        }) //Removes track from the database with delete
     },
     promoteTrack({commit, dispatch}, track){
       //this should increase the position / upvotes and downvotes on the track

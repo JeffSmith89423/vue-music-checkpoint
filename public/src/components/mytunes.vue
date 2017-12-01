@@ -22,8 +22,8 @@
         }
       },
       computed: {
-        mytunes() {
-          return this.$store.state.mytunes //<-- add something here
+        mytunes(songs) {
+          return this.$store.state.mytunes.songs //<-- add something here
       }
     }
   }
